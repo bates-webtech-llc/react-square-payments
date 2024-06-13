@@ -4,12 +4,16 @@ import * as React from 'react';
 export const getRefElement = <T>(
   element?: React.RefObject<Element> | T
 ): Element | T | undefined | null | React.RefObject<Element> => {
-  if (element && 'current' in element) {
+  if (element && isRefObject(element)) {
     return element.current;
   }
 
   return element;
 };
+
+function isRefObject<T>(value: any): value is React.RefObject<T> {
+  return value !== null && typeof value === 'object' && 'current' in value;
+}
 
 const isSsr = !(typeof window !== 'undefined' && window.document?.createElement);
 
