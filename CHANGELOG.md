@@ -1,5 +1,11 @@
 # @bateswebtech/react-square-payments
 
+## 1.0.1
+
+### Patch Changes
+
+- ae5ddcc: Fixes type error for payment click event, move node types to devDeps
+
 ## 1.0.0
 
 ### Major Changes
