@@ -139,7 +139,7 @@ function CreditCardButton({ children, isLoading, render, canProceed, ...props }:
   const buttonRef = React.useRef<HTMLButtonElement>(null);
   const { cardTokenizeResponseReceived, card } = useForm();
 
-  const handlePayment = async (e: Event) => {
+  const handlePayment = async (e: Event | React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.stopPropagation();
 
     if (isLoading || isSubmitting) return;

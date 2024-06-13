@@ -34,7 +34,7 @@ export type CreditCardPayButtonProps = Omit<
      * Call this function onClick. Alternatively just set the `ref={buttonRef}`
      * and it will be handled for you
      */
-    handlePayment: (e: Event) => void;
+    handlePayment: (e: Event | React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
     /**
      * Set `ref={buttonRef}` for it to handle the payment on click. You may want
      * to use `handlePayment` instead for more control, but don't use both.
